@@ -1,1 +1,58 @@
+@font-face {
+  font-family: 'ComicSansMS';
+  src: url('../assets/fonts/Comic-Sans-MS-Regular/ComicSansMS.eot');
+  src: local('ComicSansMS'),
+       url('../assets/fonts/Comic-Sans-MS-Regular/ComicSansMS.eot') format('embedded-opentype'),
+       url('../assets/fonts/Comic-Sans-MS-Regular/ComicSansMS.woff2') format('woff2'),
+       url('../assets/fonts/Comic-Sans-MS-Regular/ComicSansMS.woff') format('woff'),
+       url('../assets/fonts/Comic-Sans-MS-Regular/ComicSansMS.ttf') format('truetype'),
+       url('../assets/fonts/Comic-Sans-MS-Regular/ComicSansMS.svg#ComicSansMS') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ComicSansMSBold';
+  src: url('../assets/fonts/Comic-Sans-MS-Bold/ComicSansMSBold.eot');
+  src: local('ComicSansMSBold'),
+       url('../assets/fonts/Comic-Sans-MS-Bold/ComicSansMSBold.eot') format('embedded-opentype'),
+       url('../assets/fonts/Comic-Sans-MS-Bold/ComicSansMSBold.woff2') format('woff2'),
+       url('../assets/fonts/Comic-Sans-MS-Bold/ComicSansMSBold.woff') format('woff'),
+       url('../assets/fonts/Comic-Sans-MS-Bold/ComicSansMSBold.ttf') format('truetype'),
+       url('../assets/fonts/Comic-Sans-MS-Bold/ComicSansMSBold.svg#ComicSansMS') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import 'variables.scss';
+
+body {
+  font-family: 'ComicSansMS', sans-serif;
+  font-size: 18px;
+}
+
+.footer {
+  font-family: 'ComicSansMSBold', sans-serif;
+  font-size: 50px;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+.main-page-container {
+  width: 100%;
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
+.offset-container {
+  width: 100%;
+  padding-inline: $offset * 2;
+}
+
+
 @import 'partials/main';
