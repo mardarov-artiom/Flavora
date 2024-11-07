@@ -1,0 +1,180 @@
+@import '../variables';
+@import '../mixins';
+
+.mobile-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.mobile-header-content {
+  width: 100%;
+  background-color: $white;
+  padding: $offset;
+  color: $white;
+  display: flex;
+  gap: $offset * 2;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-hidden {
+  display: none;
+
+  &.open {
+    display: block;
+
+    .header-backdrop {
+      animation: fade $animation-timing ease-in-out forwards;
+    }
+
+    .hidden-navigation {
+      animation: slide $animation-timing ease-in-out forwards;
+    }
+  }
+
+  &.close {
+    display: block;
+
+    .header-backdrop {
+      animation: fadeOut $animation-timing ease-in-out forwards;
+    }
+
+    .hidden-navigation {
+      animation: slideOut $animation-timing ease-in-out forwards;
+    }
+  }
+}
+
+.header-trigger {
+  width: 60px;
+  gap: $offset;
+  display: flex;
+  flex-direction: column;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 10px;
+    border-radius: 30px;
+  }
+
+  &.open {
+    span {
+      background-color: $black;
+    }
+  }
+
+  &.close {
+    @include size(50,50);
+    position: relative;
+    span {
+      width: 130%;
+      position: absolute;
+      background-color: $white;
+      top: 40%;
+      left: -15%;
+    }
+
+    span:first-child {
+      transform: rotate(45deg);
+    }
+
+    span:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.header-fixed-container {
+  position: fixed;
+  @include fullSize();
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.header-backdrop {
+  position: absolute;
+  @include fullSize();
+  background-color: $black;
+  z-index: 1001;
+}
+
+.logo-mobile {
+  @include size(50, 50);
+  background-image: url('../img/logo.png');
+  background-position: center center;
+  background-size: contain;
+}
+
+.hidden-navigation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  z-index: 1002;
+  padding-block: $offset;
+  padding-left: $offset * 3;
+  padding-right: $offset;
+  display: flex;
+  flex-direction: column;
+  gap: $offset * 2;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.navigation.mobile {
+  color: $white;
+  display: block;
+
+  li {
+    a {
+      text-align: end;
+      padding-right: 0;
+      color: $white;
+
+      &.active {
+        padding-right: $offset;
+        border-color: $white;
+      }
+    }
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    right: 0;
+  }
+  to {
+    right: -100%;
+  }
+}

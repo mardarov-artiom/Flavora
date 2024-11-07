@@ -1,0 +1,51 @@
+@import "../variables";
+
+.footer {
+  padding-top: $offset * 2;
+  padding-bottom: $offset * 4;
+  padding-inline: $offset;
+  background-color: $black;
+  color: $white;
+  font-size: 12px;
+}
+
+.footer-content {
+  margin-bottom: $offset * 7;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.footer-content-block {
+  &.desktop {
+    display: none;
+  }
+
+  text-align: center;
+  .block-name {
+    margin-bottom: $offset * 2;
+  }
+
+  .block-details {
+    * {
+      display: block;
+    }
+  }
+}
+
+.footer-rights {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $offset * 2;
+  flex-wrap: wrap;
+}
+
+.terms-link {
+  display: block;
+  padding: $offset;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  transition: all $animation-timing / 2 ease-in-out;
+}

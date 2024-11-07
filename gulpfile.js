@@ -7,10 +7,9 @@ const plumber = require('gulp-plumber');
 const include = require('gulp-include');
 const browserSync = require('browser-sync').create();
 const scss = require('gulp-sass')(require('sass'));
-const importCss = require('gulp-import-css');
+const importCss = require('gulp-cssimport');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCss = require('gulp-cleancss');
-const uglifyJs = require('gulp-uglify');
 const svgmin = require('gulp-svgmin');
 const cheerio = require('gulp-cheerio');
 const svgSprite = require('gulp-svg-sprite');
@@ -18,6 +17,7 @@ const replace = require('gulp-replace');
 const cache = require('gulp-cache');
 const imagemin = require('gulp-imagemin');
 const rename = require("gulp-rename");
+const terser = require('gulp-terser');
 
 const sourcePath = 'src/';
 const assetsPath = sourcePath + 'assets/';
@@ -40,7 +40,7 @@ const path = {
     scss: sourcePath + 'scss/styles.scss',
     scss_css: assetsPath + 'css/',
     img: assetsPath + 'img/**/*.*',
-    fonts: assetsPath + 'fonts/**/*.*',
+    fonts: sourcePath + 'fonts/**/*.*',
     svg: assetsPath + 'svg/*.svg'
   },
   watch: {
@@ -103,7 +103,7 @@ function js() {
   return src(path.src.js)
     .pipe(plumber(plumberOptions))
     .pipe(include())
-    .pipe(uglifyJs())
+    .pipe(terser())
     .pipe(dest(path.build.js))
     .pipe(browserSync.stream());
 }

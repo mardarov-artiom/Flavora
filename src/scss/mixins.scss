@@ -1,0 +1,13 @@
+@mixin size($width, $height) {
+  width: $width + px;
+  min-width: $width + px;
+  height: $height + px;
+  min-height: $height + px;
+}
+
+@mixin fullSize() {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

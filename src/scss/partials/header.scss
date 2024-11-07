@@ -1,0 +1,57 @@
+@import '../variables';
+@import '../mixins';
+
+.header-desktop {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: $offset * 2;
+  padding: $offset * 2 $offset * 4;
+}
+
+.logo-desktop {
+  @include size(300, 50);
+  background-image: url('../img/logo-desktop.png');
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.navigation {
+  list-style: none;
+  color: $black;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: $offset;
+
+  li {
+    display: block;
+
+    a {
+      display: block;
+      padding: $offset;
+      color: $black;
+      border-width: 2px;
+      border-style: solid;
+      border-color: transparent;
+
+      &.active {
+        padding-inline: $offset;
+        border-color: $black;
+      }
+    }
+  }
+  &.desktop {
+    li a {
+      transition: all $animation-timing / 2 ease-in-out;
+    }
+    li a:not(.active):hover {
+      cursor: pointer;
+      transform: scale(1.05);
+      border-color: $black;
+    }
+  }
+}

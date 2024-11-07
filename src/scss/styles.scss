@@ -1,12 +1,11 @@
 @font-face {
   font-family: 'ComicSansMS';
-  src: url('../assets/fonts/Comic-Sans-MS-Regular/ComicSansMS.eot');
-  src: local('ComicSansMS'),
-       url('../assets/fonts/Comic-Sans-MS-Regular/ComicSansMS.eot') format('embedded-opentype'),
-       url('../assets/fonts/Comic-Sans-MS-Regular/ComicSansMS.woff2') format('woff2'),
-       url('../assets/fonts/Comic-Sans-MS-Regular/ComicSansMS.woff') format('woff'),
-       url('../assets/fonts/Comic-Sans-MS-Regular/ComicSansMS.ttf') format('truetype'),
-       url('../assets/fonts/Comic-Sans-MS-Regular/ComicSansMS.svg#ComicSansMS') format('svg');
+  src: url('../fonts/Comic-Sans-MS-Regular/ComicSansMS.eot');
+  src: url('../fonts/Comic-Sans-MS-Regular/ComicSansMS.eot') format('embedded-opentype'),
+       url('../fonts/Comic-Sans-MS-Regular/ComicSansMS.woff2') format('woff2'),
+       url('../fonts/Comic-Sans-MS-Regular/ComicSansMS.woff') format('woff'),
+       url('../fonts/Comic-Sans-MS-Regular/ComicSansMS.ttf') format('truetype'),
+       url('../fonts/Comic-Sans-MS-Regular/ComicSansMS.svg#ComicSansMS') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -14,13 +13,12 @@
 
 @font-face {
   font-family: 'ComicSansMSBold';
-  src: url('../assets/fonts/Comic-Sans-MS-Bold/ComicSansMSBold.eot');
-  src: local('ComicSansMSBold'),
-       url('../assets/fonts/Comic-Sans-MS-Bold/ComicSansMSBold.eot') format('embedded-opentype'),
-       url('../assets/fonts/Comic-Sans-MS-Bold/ComicSansMSBold.woff2') format('woff2'),
-       url('../assets/fonts/Comic-Sans-MS-Bold/ComicSansMSBold.woff') format('woff'),
-       url('../assets/fonts/Comic-Sans-MS-Bold/ComicSansMSBold.ttf') format('truetype'),
-       url('../assets/fonts/Comic-Sans-MS-Bold/ComicSansMSBold.svg#ComicSansMS') format('svg');
+  src: url('../fonts/Comic-Sans-MS-Bold/ComicSansMSBold.eot');
+  src: url('../fonts/Comic-Sans-MS-Bold/ComicSansMSBold.eot') format('embedded-opentype'),
+       url('../fonts/Comic-Sans-MS-Bold/ComicSansMSBold.woff2') format('woff2'),
+       url('../fonts/Comic-Sans-MS-Bold/ComicSansMSBold.woff') format('woff'),
+       url('../fonts/Comic-Sans-MS-Bold/ComicSansMSBold.ttf') format('truetype'),
+       url('../fonts/Comic-Sans-MS-Bold/ComicSansMSBold.svg#ComicSansMS') format('svg');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -31,11 +29,11 @@
 body {
   font-family: 'ComicSansMS', sans-serif;
   font-size: 18px;
+  padding-top: 70px;
 }
 
-.footer {
-  font-family: 'ComicSansMSBold', sans-serif;
-  font-size: 50px;
+body.navigation-open {
+  overflow: hidden;
 }
 
 *, *:before, *:after {
@@ -54,5 +52,56 @@ body {
   padding-inline: $offset * 2;
 }
 
+a {
+  text-decoration: none;
+  color: $white;
+}
+
 
 @import 'partials/main';
+
+@media (width > 1024px) {
+  body {
+    padding-top: 0;
+  }
+
+  .header-desktop {
+    display: flex;
+  }
+
+  .mobile-header {
+    display: none;
+  }
+
+  .footer {
+    font-size: 24px;
+  }
+
+  .footer-content {
+    justify-content: space-between;
+    padding-inline: $offset * 4;
+  }
+
+  .footer-content-block {
+    text-align: start;
+  }
+
+  .footer-content-block.desktop {
+    display: block;
+  }
+
+  .text-align-end {
+    text-align: end;
+  }
+
+  .footer-rights {
+    justify-content: flex-start;
+    gap: $offset * 6;
+  }
+
+  .terms-link:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    border-color: $white;
+  }
+}
