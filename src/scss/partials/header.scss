@@ -46,7 +46,7 @@
   }
   &.desktop {
     li a {
-      transition: all $animation-timing / 2 ease-in-out;
+      transition: all calc($animation-timing / 2) ease-in-out;
     }
     li a:not(.active):hover {
       cursor: pointer;

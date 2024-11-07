@@ -1,3 +1,95 @@
 @import './header';
 @import './header-mobile';
 @import './footer';
+
+.description-section {
+  position: relative;
+  padding-top: 110%;
+  font-family: "ComicSansMSBold", sans-serif;
+
+  background-position: 0 center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &.description-ingredients {
+    background-image: url('../img/ingredients.png');
+  }
+
+  &.description-offer {
+    padding-top: 65%;
+    .description-offers-bg {
+      position: absolute;
+      bottom: 0;
+      background-position: -150px 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+
+      &.first {
+        left: 0;
+        background-image: url('../img/offer_01.png');
+      }
+
+      &.second {
+        display: none;
+        right: 0;
+        background-image: url('../img/offer_02.png');
+      }
+    }
+  }
+}
+
+.ingredients {
+  position: absolute;
+  font-size: 25px;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-wrap: nowrap;
+  color: $white;
+
+  * {
+    display: block;
+  }
+}
+
+.brings {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: $white;
+  padding: $offset * 3;
+
+  * {
+    display: block;
+  }
+}
+
+.description-offers-title {
+  font-family: "ComicSansMSBold", sans-serif;
+  font-size: 18px;
+  position: absolute;
+  top: 10%;
+  color: $black;
+  left: 50%;
+  transform: translateX(-50%);
+  text-wrap: nowrap;
+
+  * {
+    font-size: inherit;
+    margin: 0;
+  }
+}
+
+.description-offers-link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  color: $black;
+  padding: $offset * 1 $offset * 2;
+  border: 3px solid $black;
+  font-size: 18px;
+  font-family: "ComicSansMSBold", sans-serif;
+}

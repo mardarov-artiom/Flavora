@@ -6,11 +6,12 @@
   top: 0;
   left: 0;
   right: 0;
+  background-color: $white;
+  z-index: 1000;
 }
 
 .mobile-header-content {
   width: 100%;
-  background-color: $white;
   padding: $offset;
   color: $white;
   display: flex;

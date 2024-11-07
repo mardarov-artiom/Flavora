@@ -59,49 +59,5 @@ a {
 
 
 @import 'partials/main';
+@import 'media';
 
-@media (width > 1024px) {
-  body {
-    padding-top: 0;
-  }
-
-  .header-desktop {
-    display: flex;
-  }
-
-  .mobile-header {
-    display: none;
-  }
-
-  .footer {
-    font-size: 24px;
-  }
-
-  .footer-content {
-    justify-content: space-between;
-    padding-inline: $offset * 4;
-  }
-
-  .footer-content-block {
-    text-align: start;
-  }
-
-  .footer-content-block.desktop {
-    display: block;
-  }
-
-  .text-align-end {
-    text-align: end;
-  }
-
-  .footer-rights {
-    justify-content: flex-start;
-    gap: $offset * 6;
-  }
-
-  .terms-link:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    border-color: $white;
-  }
-}

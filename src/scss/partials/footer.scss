@@ -26,10 +26,30 @@
     margin-bottom: $offset * 2;
   }
 
-  .block-details {
-    * {
-      display: block;
-    }
+  .block-details span {
+    display: block;
+  }
+}
+
+.footer-contact {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: $offset * 2;
+}
+
+.footer-logo {
+  @include size(30,30);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &.phone {
+    background-image: url('../img/phone.png');
+  }
+
+  &.mail {
+    background-image: url('../img/mail.png');
   }
 }
 
@@ -47,5 +67,5 @@
   border-width: 2px;
   border-style: solid;
   border-color: transparent;
-  transition: all $animation-timing / 2 ease-in-out;
+  transition: all calc($animation-timing / 2) ease-in-out;
 }
